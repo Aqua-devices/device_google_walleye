@@ -14,10 +14,8 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_walleye.mk \
-    $(LOCAL_DIR)/aosp_walleye_test.mk \
+LOCAL_PATH := $(call my-dir)
 
-COMMON_LUNCH_CHOICES := \
-    aosp_walleye-userdebug \
-    aosp_walleye_test-userdebug
+PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/aquarios.mk \
+    $(LOCAL_DIR)/aosp_walleye.mk

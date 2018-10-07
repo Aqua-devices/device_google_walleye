@@ -20,7 +20,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 
 $(call inherit-product, device/google/walleye/device-walleye.mk)
-$(call inherit-product-if-exists, vendor/google_devices/walleye/proprietary/device-vendor-walleye.mk)
 
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0 \
@@ -33,10 +32,4 @@ PRODUCT_COPY_FILES += \
     device/google/walleye/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
     frameworks/native/data/etc/aosp_excluded_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/aosp_excluded_hardware.xml
 
-PRODUCT_RESTRICT_VENDOR_FILES := owner
-
-PRODUCT_MANUFACTURER := Google
-PRODUCT_BRAND := Android
-PRODUCT_NAME := aosp_walleye
-PRODUCT_DEVICE := walleye
-PRODUCT_MODEL := AOSP on walleye
+# PRODUCT_RESTRICT_VENDOR_FILES := owner

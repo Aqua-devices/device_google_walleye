@@ -14,5 +14,5 @@
 
 LOCAL_STEM := walleye/device-partial.mk
 
-$(call inherit-product-if-exists, vendor/google_devices/$(LOCAL_STEM))
-$(call inherit-product-if-exists, vendor/qcom/$(LOCAL_STEM))
+$(call inherit-product, vendor/google_devices/$(LOCAL_STEM))
+$(call inherit-product, vendor/qcom/$(LOCAL_STEM))
