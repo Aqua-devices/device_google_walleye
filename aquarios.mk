@@ -1,5 +1,4 @@
-#
-# Copyright 2017 The Android Open Source Project
+# Copyright (C) 2018 AquariOS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,8 +11,16 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
+# Include  common configuration
+include vendor/aquarios/configs/aquarios_phone.mk
+
+# Inherit from the common Open Source product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+
+# Inherit AOSP device configuration for  walleye
 $(call inherit-product, device/google/walleye/aosp_walleye.mk)
 
-PRODUCT_NAME := aosp_walleye_test
+$(call inherit-product,  vendor/google/walleye/walleye-vendor.mk)
+$(call inherit-product,  vendor/pixelgapps/pixel-gapps.mk)
